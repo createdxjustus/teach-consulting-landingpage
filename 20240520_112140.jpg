@@ -1,0 +1,73 @@
+import { Globe, BookOpen, Mic, Lightbulb, ArrowRight, Star } from "lucide-react";
+
+export function Featured() {
+  return (
+    <section className="py-20 bg-[#003B5C]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Label */}
+        <div className="flex items-center justify-center gap-2 mb-6">
+          <Star className="w-4 h-4 text-[#2D8C6C] fill-[#2D8C6C]" />
+          <span className="text-[#2D8C6C] text-sm font-bold uppercase tracking-widest">Featured Course</span>
+          <Star className="w-4 h-4 text-[#2D8C6C] fill-[#2D8C6C]" />
+        </div>
+
+        {/* Heading */}
+        <div className="text-center mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-2">
+            Global Adventures Through
+          </h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#2D8C6C] leading-tight">
+            Literature & the Arts
+          </h2>
+        </div>
+
+        <p className="text-center text-blue-200 text-base mb-12">
+          A Summer Enrichment Course with V.M. Crockett &nbsp;·&nbsp; 8 Weeks &nbsp;·&nbsp; Hosted on Outschool
+        </p>
+
+        {/* Description */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-8 mb-10 max-w-3xl mx-auto">
+          <p className="text-blue-100 text-lg leading-relaxed">
+            This enrichment class blends <span className="text-white font-semibold">reading, writing, speaking, and critical thinking</span> with the arts and cultural studies. Students explore the literature, history, and arts of global regions — Africa, Asia, the Americas, Australia, and Europe — through experiential activities and collaborative discussion seminars.
+          </p>
+          <p className="text-blue-100 text-lg leading-relaxed mt-4">
+            Over 8 weeks, learners build an <span className="text-white font-semibold">international portfolio</span> that can serve as a tool for school-based extracurriculars and extended learning. Learning materials include texts, short videos, recorded interviews, music, and more.
+          </p>
+        </div>
+
+        {/* Feature Pills */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {[
+            { icon: BookOpen, label: "Standards-Based Learning" },
+            { icon: Globe, label: "5 Global Regions" },
+            { icon: Mic, label: "Collaborative Seminars" },
+            { icon: Lightbulb, label: "Higher-Order Thinking" },
+          ].map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-3 bg-white/10 border border-white/10 rounded-xl px-5 py-4">
+              <div className="bg-[#2D8C6C] p-2 rounded-lg flex-shrink-0">
+                <Icon className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-white font-medium text-sm">{label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <a
+            href="https://outschool.com/classes/global-adventures-through-literature-and-arts-6vedi8yx?showDetails=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#2D8C6C] hover:bg-[#24755a] text-white font-bold px-10 py-5 rounded-xl text-lg transition-colors"
+          >
+            Enroll on Outschool
+            <ArrowRight className="w-5 h-5" />
+          </a>
+          <p className="text-blue-300 text-sm mt-4">Opens in a new tab · Hosted on Outschool</p>
+        </div>
+
+      </div>
+    </section>
+  );
+}

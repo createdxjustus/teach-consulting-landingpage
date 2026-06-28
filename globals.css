@@ -1,0 +1,110 @@
+import image_20240520_112140 from '@/imports/20240520_112140.jpg'
+import { Heart, Users, Globe, Lightbulb } from "lucide-react";
+
+export function Philosophy() {
+  const principles = [
+    {
+      icon: Heart,
+      title: "Student-Centered",
+      description: "Every decision, strategy, and program is designed with the student's success and wellbeing at the core."
+    },
+    {
+      icon: Users,
+      title: "Culturally Sensitive",
+      description: "Embracing diversity and creating inclusive environments that honor and celebrate all cultural backgrounds."
+    },
+    {
+      icon: Globe,
+      title: "Community Building",
+      description: "Fostering diverse communities where every voice matters and collective growth is prioritized."
+    },
+    {
+      icon: Lightbulb,
+      title: "Empowerment Focus",
+      description: "Equipping students, educators, and administrators with tools and confidence to excel independently."
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-[#003B5C] to-[#005580] text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Content */}
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-4xl font-bold mb-4">Our Philosophy</h2>
+              <p className="text-xl text-gray-200 leading-relaxed">
+                At TEACH Educational Consulting, we believe that true educational excellence emerges from 
+                the heart—from genuine care, cultural awareness, and a commitment to empowering 
+                every learner.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {principles.map((principle, index) => {
+                const Icon = principle.icon;
+                return (
+                  <div 
+                    key={index}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="bg-[#2D8C6C] p-3 rounded-lg flex-shrink-0">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold mb-2">{principle.title}</h3>
+                        <p className="text-gray-200">{principle.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right Column - Image and Stats */}
+          <div className="space-y-6">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src={image_20240520_112140}
+                alt="Academic success and achievement"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="bg-white text-[#003B5C] rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold mb-4">Why Choose TEACH?</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="bg-[#2D8C6C] p-1 rounded-full mt-1.5 flex-shrink-0">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <span className="text-gray-700">Proven track record with 25+ years of educational impact</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-[#2D8C6C] p-1 rounded-full mt-1.5 flex-shrink-0">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <span className="text-gray-700">International perspective from Fulbright Scholar expertise</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-[#2D8C6C] p-1 rounded-full mt-1.5 flex-shrink-0">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <span className="text-gray-700">Comprehensive 4-tier system addressing all educational levels</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-[#2D8C6C] p-1 rounded-full mt-1.5 flex-shrink-0">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <span className="text-gray-700">Culturally-responsive strategies that honor diversity</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

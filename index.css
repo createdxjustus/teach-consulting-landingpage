@@ -1,0 +1,113 @@
+import { Mail, Phone, MapPin } from "lucide-react";
+
+export function Contact() {
+  return (
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-[#003B5C] mb-4">
+            Let's Transform Education Together
+          </h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            Ready to empower your students, educators, and community? Reach out to schedule a consultation.
+          </p>
+        </div>
+
+        <div className="max-w-2xl mx-auto space-y-6">
+          {/* Get In Touch */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 flex flex-col justify-between">
+            <div>
+              <h3 className="text-2xl font-bold text-[#003B5C] mb-3">Get In Touch</h3>
+              <p className="text-gray-600 mb-10 leading-relaxed">
+                We welcome inquiries from schools, districts, nonprofits, and individual educators. Reach out by email or phone — we look forward to connecting with you.
+              </p>
+
+              <div className="space-y-8">
+                <div className="flex items-center gap-5">
+                  <div className="bg-[#003B5C] p-4 rounded-xl flex-shrink-0">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">Email Us</p>
+                    <a
+                      href="mailto:teacheducationalconsulting@gmail.com"
+                      className="text-lg font-semibold text-[#003B5C] hover:text-[#2D8C6C] transition-colors break-all"
+                    >
+                      teacheducationalconsulting@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-5">
+                  <div className="bg-[#003B5C] p-4 rounded-xl flex-shrink-0">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">Call Us</p>
+                    <a
+                      href="tel:+14049397505"
+                      className="text-lg font-semibold text-[#003B5C] hover:text-[#2D8C6C] transition-colors"
+                    >
+                      (404) 939-7505
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-5">
+                  <div className="bg-[#003B5C] p-4 rounded-xl flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">Location</p>
+                    <p className="text-lg font-semibold text-[#003B5C]">Atlanta, GA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-gray-100">
+              <a
+                href="mailto:teacheducationalconsulting@gmail.com"
+                className="flex items-center justify-center gap-3 w-full border-2 border-[#003B5C] text-[#003B5C] hover:bg-[#003B5C] hover:text-white transition-colors font-semibold py-4 rounded-xl text-base"
+              >
+                <Mail className="w-5 h-5" />
+                Send Us an Email
+              </a>
+            </div>
+          </div>
+
+          {/* Business Hours */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+            <h3 className="text-xl font-bold text-[#003B5C] mb-4">Business Hours</h3>
+            <div className="space-y-2 text-gray-700">
+              <div className="flex justify-between">
+                <span>Monday - Friday:</span>
+                <span className="font-semibold">9:00 AM - 6:00 PM</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Saturday:</span>
+                <span className="font-semibold">By Appointment</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Sunday:</span>
+                <span className="font-semibold">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-gray-300">
+        <div className="text-center text-gray-600">
+          <p className="mb-2">
+            © {new Date().getFullYear()} TEACH Educational Consulting. All rights reserved.
+          </p>
+          <p className="text-sm">
+            Empowering educational excellence through heart-centered leadership
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

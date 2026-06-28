@@ -1,0 +1,129 @@
+import image_20241017_143715_1 from '@/imports/20241017_143715-1.jpg'
+import image_IMG_20241018_WA0006 from '@/imports/IMG-20241018-WA0006.jpg'
+import { BookOpen, Users, Award, Target } from "lucide-react";
+import secondaryLogo from "figma:asset/3acdc8b5be20acbc1dc8c7c9986fc62a17ddd8ba.png";
+
+export function Services() {
+  const tiers = [
+    {
+      icon: BookOpen,
+      title: "Student Development",
+      description: "Personalized academic support and social-emotional learning strategies that empower students to achieve their full potential.",
+      features: [
+        "Individual learning plans",
+        "Academic skill building",
+        "Social-emotional development",
+        "Goal setting and achievement tracking"
+      ],
+      color: "from-[#003B5C] to-[#005580]"
+    },
+    {
+      icon: Users,
+      title: "Educator Empowerment",
+      description: "Professional development programs that equip teachers with culturally-responsive teaching methods and innovative strategies.",
+      features: [
+        "Culturally-responsive pedagogy",
+        "Classroom management techniques",
+        "Differentiated instruction methods",
+        "Collaborative learning strategies"
+      ],
+      color: "from-[#2D8C6C] to-[#3AA882]"
+    },
+    {
+      icon: Award,
+      title: "Administrator Excellence",
+      description: "Leadership coaching and strategic planning to build effective, inclusive educational institutions.",
+      features: [
+        "Leadership development",
+        "Strategic planning support",
+        "Policy development guidance",
+        "Change management consulting"
+      ],
+      color: "from-[#005580] to-[#0077A3]"
+    },
+    {
+      icon: Target,
+      title: "Community Building",
+      description: "Creating diverse, inclusive educational communities that celebrate all learners and promote collective success.",
+      features: [
+        "Diversity and inclusion initiatives",
+        "Family engagement programs",
+        "Community partnership development",
+        "Cultural competency training"
+      ],
+      color: "from-[#3AA882] to-[#2D8C6C]"
+    }
+  ];
+
+  return (
+    <section id="services" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="flex justify-center mb-6">
+            <img 
+              src={secondaryLogo} 
+              alt="TEACH Educational Consulting" 
+              className="w-48 h-auto"
+            />
+          </div>
+          <h2 className="text-4xl font-bold text-[#003B5C] mb-4">
+            The TEACH 4-Tier System
+          </h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            A comprehensive program designed to develop students, educators, and administrators 
+            through culturally-sensitive, student-centered approaches to academic and social success.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {tiers.map((tier, index) => {
+            const Icon = tier.icon;
+            return (
+              <div 
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow duration-300"
+              >
+                {/* Card Header */}
+                <div className={`bg-gradient-to-r ${tier.color} p-6 text-white`}>
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="bg-white/20 p-3 rounded-lg backdrop-blur-sm">
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold">{tier.title}</h3>
+                  </div>
+                  <p className="text-white/90">{tier.description}</p>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-6">
+                  <h4 className="font-semibold text-[#003B5C] mb-4">Key Components:</h4>
+                  <ul className="space-y-3">
+                    {tier.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <div className="bg-[#2D8C6C]/10 p-1 rounded-full mt-1">
+                          <div className="w-2 h-2 bg-[#2D8C6C] rounded-full"></div>
+                        </div>
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Image */}
+        <div className="rounded-2xl overflow-hidden shadow-xl">
+          <img
+            src={image_20241017_143715_1}
+            alt="Collaborative educational workshop"
+            className="w-full h-96 object-cover object-[center_75%]"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
